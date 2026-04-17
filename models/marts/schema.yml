@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Final orders fact table joined with customer details"
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: "Full name of the customer"
+        tests:
+          - not_null
+
+      - name: order_amount
+        description: "Total value of the order"
+        tests:
+          - not_null
