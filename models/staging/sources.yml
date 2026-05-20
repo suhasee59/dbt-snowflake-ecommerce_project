@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: e_raw
+    database: E_COMMERCE_DB
+    schema: Public
+
+    tables:
+      - name: raw_customers
+      - name: raw_orders
+      - name: raw_order_items
+      - name: raw_products
+      - name: raw_payments

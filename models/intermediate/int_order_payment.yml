@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: int_order_payment
+    description: "Intermediate model combining orders with latest payment information"
+
+    columns:
+      - name: order_id
+        description: "Unique order identifier"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Customer identifier"
+        tests:
+          - not_null
+
+      - name: order_status
+        description: "Current order status"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  [
+                    "completed",
+                    "cancelled",
+                    "processing",
+                    "refunded",
+                    "pending",
+                    "shipped",
+                  ]
+
+      - name: payment_status
+        description: "Latest payment status"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["completed", "pending", "failed", "refunded"]
+
+      - name: payment_id
+        description: "Latest payment id"
+
+      - name: total_amount
+        description: "Total order amount"
+        tests:
+          - not_null
+
+      - name: payment_amount
+        description: "Amount paid"
+
+      - name: transaction_id
+        description: "Payment transaction identifier"
+
+      - name: currency
+        description: "Transaction currency"
+        tests:
+          - not_null
+
+      - name: order_date
+        description: "Date when order was placed"
+        tests:
+          - not_null
+
+      - name: processed_at
+        description: "Latest payment processed timestamp"
