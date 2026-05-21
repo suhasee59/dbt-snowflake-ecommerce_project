@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: int_order_customers
+    description: "Intermediate model combining customer details with aggregated order metrics"
+
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+
+      - name: full_name
+        description: "Customer full name"
+        tests:
+          - not_null
+
+      - name: email
+        description: "Customer email"
+        tests:
+          - not_null
+
+      - name: total_orders
+        description: "Total number of orders per customer"
+        tests:
+          - not_null
+
+      - name: totalorder_value
+        description: "Total lifetime order value"
+        tests:
+          - not_null
+
+      - name: first_order_date
+        description: "Date of first order"
+        tests:
+          - not_null
+
+      - name: last_order_date
+        description: "Date of last order"
+        tests:
+          - not_null
+
+      - name: completed_orders
+        description: "Number of completed orders"
+        tests:
+          - not_null
+
+      - name: cancelled_orders
+        description: "Number of cancelled orders"
+        tests:
+          - not_null

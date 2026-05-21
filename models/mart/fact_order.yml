@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: fact_order
+    description: "Final fact table containing order, payment, and item level metrics"
+
+    columns:
+      - name: order_id
+        description: "Unique identifier for each order"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Customer placing the order"
+        tests:
+          - not_null
+
+      - name: payment_id
+        description: "Payment identifier"
+        tests:
+          - not_null
+
+      - name: payment_status
+        description: "Payment processing status"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - "completed"
+                  - "pending"
+                  - "failed"
+                  - "refunded"
+
+      - name: order_status
+        description: "Order lifecycle status"
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - "completed"
+                  - "cancelled"
+                  - "processing"
+                  - "refunded"
+                  - "pending"
+                  - "shipped"
+
+      - name: total_amount
+        description: "Total order amount"
+        tests:
+          - not_null
+
+      - name: payment_amount
+        description: "Amount received from payment"
+        tests:
+          - not_null
+
+      - name: total_items
+        description: "Total items in order"
+        tests:
+          - not_null
+
+      - name: is_fully_paid
+        description: "Indicates whether payment covered full order amount"
+        tests:
+          - not_null

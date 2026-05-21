@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: int_order_item_product
+    description: ""
+    columns:
+      - name: order_item_id
+        data_type: varchar
+        description: ""
+
+      - name: order_id
+        data_type: varchar
+        description: ""
+
+      - name: product_id
+        data_type: varchar
+        description: ""
+
+      - name: warehouse_id
+        data_type: varchar
+        description: ""
+
+      - name: product_name
+        data_type: varchar
+        description: ""
+
+      - name: category
+        data_type: varchar
+        description: ""
+
+      - name: subcategory
+        data_type: varchar
+        description: ""
+
+      - name: brand
+        data_type: varchar
+        description: ""
+
+      - name: cost_price
+        data_type: number
+        description: ""
+
+      - name: quantity
+        data_type: number
+        description: ""
+
+      - name: unit_price
+        data_type: number
+        description: ""
+
+      - name: discount_amount
+        data_type: number
+        description: ""
+
+      - name: gross_item_amount
+        data_type: number
+        description: ""
+
+      - name: net_item_amount
+        data_type: number
+        description: ""
+
+      - name: total_price
+        data_type: number
+        description: ""
+
+      - name: item_margin
+        data_type: number
+        description: ""
+
+      - name: fulfillment_status
+        data_type: varchar
+        description: ""
+
+      - name: shipped_date
+        data_type: timestamp_ntz
+        description: ""
+
+      - name: shipping_delay_days
+        data_type: number
+        description: ""
+
+      - name: is_late_shipment
+        data_type: boolean
+        description: ""
+
+      - name: created_at
+        data_type: timestamp_ntz
+        description: ""
