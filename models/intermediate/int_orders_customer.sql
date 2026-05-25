@@ -26,7 +26,6 @@ with
 
         select
 
-            -- customer info
             c.customer_id,
             c.full_name,
             c.email,
@@ -34,8 +33,6 @@ with
             c.state,
             c.customer_segment,
             c.is_active,
-
-            -- order summary
             o.total_orders,
             o.totalorder_value,
             o.first_order_date,
